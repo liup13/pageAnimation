@@ -1,24 +1,20 @@
 <template>
     <div class="box">
         <section class="section-wrap">
-
           <div class="section section-1">
-            <Week></Week>
-
             <div class="title active">
-
-              <p class="tit">CSS3 纵向滚屏翻页，支持键盘，鼠标滚轮操作</p>
-
+              <img src="../assets/images/bj.jpg"/>
+              <div class="in-1">
+                <div>简历</div>
+                <div>RESUME</div>
+              </div>
+              <!--<p class="tit">CSS3 纵向滚屏翻页，支持键盘，鼠标滚轮操作</p>-->
             </div>
-
           </div>
 
           <div class="section section-2">
-
             <div class="title">
-
-              <p class="tit">随便写写意思下!</p>
-
+              <Note></Note>
             </div>
 
           </div>
@@ -218,13 +214,13 @@
 
   .section-wrap .section{ position:relative; width:100%; height:100%; background-position:center center; background-repeat:no-repeat;}
 
-  .section-wrap .section .title{width:100%;position:absolute;top:10%;color:#fff;font-size:2.4em;text-align:center;}
+  .section-wrap .section .title{width:100%;position:absolute;color:#fff;font-size:2.4em;text-align:center;}
 
   .section-wrap .section .title p{ padding:0 4%;opacity:0}
 
   .section-wrap .section .title.active .tit{ opacity:1;transform:translateY(-25px);-webkit-transform:translateY(-25px);transition:all 2s cubic-bezier(0.86,0,0.8,1);-webkit-transition:all 2s cubic-bezier(0.86,0,0.8,1);}
 
-  .section-wrap .section-1{ background-color:#337ab7}
+  /*.section-wrap .section-1{ background-color:#337ab7}*/
   .section-wrap .section-2{ background-color:#5cb85c}
   .section-wrap .section-3{ background-color:#5bc0de}
   .section-wrap .section-4{ background-color:#f0ad4e}
