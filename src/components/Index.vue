@@ -43,7 +43,7 @@
 
             <div class="title">
 
-              <p class="tit">随便写写意思下</p>
+              <Production></Production>
 
             </div>
 
@@ -74,11 +74,13 @@
 <script>
   import Week from '@/components/Week.vue';
   import Note from '@/components/Note.vue';
+  import Production from '@/components/Production.vue';
     export default {
         name: "Index",
         components: {
           Week,
-          Note
+          Note,
+          Production
         }
     }
 
