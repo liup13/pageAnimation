@@ -4,6 +4,8 @@
 
 ## Build Setup
 
+> 预览（https://liup13.github.io/resume/）
+
 ``` bash
 # install dependencies
 npm install
