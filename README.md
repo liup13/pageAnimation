@@ -1,8 +1,9 @@
 # resume
 
-> A resume project
+> 刚好想要换工作，就想着用vue写个网页版简历
 
 ## Build Setup
+[预览](https://liup13.github.io/resume/)
 
 ``` bash
 # install dependencies
