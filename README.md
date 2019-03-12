@@ -3,6 +3,8 @@
 > 刚好想要换工作，就想着用vue写个网页版简历
 
 ## Build Setup
+在打包时 遇到什么都打包成功，访问时显示白板。 解决办法 config/index.js -> build:{ assetsPublicPath的 '/' 改为 './'  }
+
 [预览](https://liup13.github.io/resume/)
 
 ``` bash
