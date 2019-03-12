@@ -7,6 +7,7 @@
               <div class="in-1">
                 <div>简历</div>
                 <div>RESUME</div>
+                <div>我是一个前端工程师</div>
               </div>
               <!--<p class="tit">CSS3 纵向滚屏翻页，支持键盘，鼠标滚轮操作</p>-->
             </div>
@@ -226,7 +227,7 @@
   .section-wrap .section-2{ background-color:#5cb85c}
   .section-wrap .section-3{ background-color:#5bc0de}
   .section-wrap .section-4{ background-color:#f0ad4e}
-  .section-wrap .section-5{ background-color:#d9534f}
+  .section-wrap .section-5{ background-color:#efefef}
 
   .put-section-0{ transform:translateY(0);-webkit-transform:translateY(0);}
   .put-section-1{ transform:translateY(-100%);-webkit-transform:translateY(-100%);}
