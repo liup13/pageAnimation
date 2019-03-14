@@ -1,73 +1,35 @@
 <template>
     <div class="box">
-        <section class="section-wrap">
-          <div class="section section-1">
-            <div class="title active">
-              <img src="../assets/images/bj.jpg"/>
-              <div class="in-1">
-                <div>简历</div>
-                <div>RESUME</div>
-                <div v-for="msg in msgs">
-                  {{ msg.text }}
-                </div>
-                <div id="text"></div>
-              </div>
-            </div>
+      <div class="section-1 p-relative">
+        <div style="height: 100%"><img src="../assets/images/bj.jpg" style="width: 100%;height: 100%;"/></div>
+        <div class="p-absolute note" style="top:45%; text-align: center; left: 10%; right: 10%">
+          <div>简历</div>
+          <div class="fontSE60">RESUME</div>
+          <div>
+            <span class="nav" param="self"><a href="#self">个人</a></span>&nbsp;
+            <span class="nav" param="weekBox"><a href="#weekBox">工作</a></span>
+          </div>
+          <div v-for="msg in msgs">
+            {{ msg.text }}
           </div>
 
-          <div class="section section-2">
-            <div class="title">
-              <Note></Note>
-            </div>
-          </div>
+          <div id="text"></div>
+        </div>
+      </div>
+      <div class="section-2">
+        <Note></Note>
+      </div>
+      <div class="section section-3">
+        <Production></Production>
+      </div>
+      <div class="section section-4">
+          <Week></Week>
+      </div>
 
-          <div class="section section-3">
+      <div class="section section-5">
+      </div>
 
-            <div class="title">
-
-              <p class="tit">随便写写意思下</p>
-
-            </div>
-
-          </div>
-
-          <div class="section section-4">
-
-            <div class="title">
-
-              <!--<p class="tit">{{message}}</p>-->
-
-            </div>
-
-          </div>
-
-          <div class="section section-5">
-
-            <div class="title">
-
-              <Production></Production>
-
-            </div>
-
-          </div>
-
-        </section>
-
-        <ul class="section-btn">
-
-          <li class="on"></li>
-
-          <li></li>
-
-          <li></li>
-
-          <li></li>
-
-          <li></li>
-
-        </ul>
-
-        <div class="arrow" v-on:click="bottomClick">&laquo;</div>
+        <!--<div class="arrow" v-on:click="bottomClick">&laquo;</div>-->
 
       <!--<Note></Note>-->
     </div>
@@ -96,67 +58,28 @@
         },
         methods:{
             init:function(){
-              var i=0;
+              $(".section-1").css("height",document.documentElement.clientHeight);
 
-              var $btn = $('.section-btn li'),
+              function heightToTop(ele){
+                //ele为指定跳转到该位置的DOM节点
+                let bridge = ele;
+                let root = document.body;
+                let height = 0;
+                do{
+                  height += bridge.offsetTop;
+                  bridge = bridge.offsetParent;
+                }while(bridge !== root)
 
-                $wrap = $('.section-wrap'),
-
-                $arrow = $('.arrow');
-
-              let _this = this;
-
-              /*当前页面赋值*/
-              function up(){
-                i++;if(i==$btn.length){i=0};
-                if(i == 0) _this.common.typing('text',_this.message)
+                return height;
               }
-              function down(){ i--;if(i<0){i=$btn.length-1}; }
-
-              /*页面滑动*/
-              function run(){
-                $btn.eq(i).addClass('on').siblings().removeClass('on');
-                $wrap.attr("class","section-wrap").addClass(function() { return "put-section-"+i; }).find('.section').eq(i).find('.title').addClass('active');
-                if(i == 0) _this.common.typing('text',_this.message)
-              };
-
-              /*右侧按钮点击*/
-              $btn.each(function(index) {
-                $(this).click(function(){
-                  i=index;
-                  run();
+              //按钮点击时
+              $(".nav").addEventListener('click',function() {
+                var targetEle = $("."+$(this).attr("param"));
+                window.scrollTo({
+                  top: heightToTop(targetEle),
+                  behavior: 'smooth'
                 })
               });
-
-              /*翻页按钮点击*/
-              $arrow.one('click',go);
-              function go(){
-                up();run();
-                setTimeout(function(){$arrow.one('click',go)},1000)
-              };
-
-              /*响应鼠标*/
-              $wrap.one('mousewheel',mouse_);
-              function mouse_(event){
-                if(event.deltaY<0) {up()}
-                else{down()}
-                run();
-                setTimeout(function(){$wrap.one('mousewheel',mouse_)},1000)
-              };
-
-              /*响应键盘上下键*/
-              $(document).one('keydown',k);
-              function k(event){
-                var e=event||window.event;
-                var key=e.keyCode||e.which||e.charCode;
-                switch(key)	{
-                  case 38: down();run();
-                    break;
-                  case 40: up();run();
-                    break;
-                };
-                setTimeout(function(){$(document).one('keydown',k)},1000);
-              }
             },
             bottomClick:function(){
               this.common.getLoading();
@@ -182,36 +105,38 @@
 </script>
 
 <style scoped>
+  .section-1 .nav{ display: inline-block; width: 100px; height: 100px; line-height: 100px; border: 1px solid #fff; border-radius: 50%;vertical-align: middle; }
+  .section-1 .nav:hover{ font-size: 24px;transition: all .4s ease-in-out; }
 
-  .section-wrap{ width:100%;height:100%;overflow:visible;transition:transform 1s cubic-bezier(0.86,0,0.03,1);-webkit-transition:-webkit-transform 1s cubic-bezier(0.86,0,0.03,1);}
+  /*.section-wrap{ width:100%;height:100%;overflow:visible;transition:transform 1s cubic-bezier(0.86,0,0.03,1);-webkit-transition:-webkit-transform 1s cubic-bezier(0.86,0,0.03,1);}*/
 
-  .section-wrap .section{ position:relative; width:100%; height:100%; background-position:center center; background-repeat:no-repeat;}
+  /*.section-wrap .section{ position:relative; width:100%; height:100%; background-position:center center; background-repeat:no-repeat;}*/
 
-  .section-wrap .section .title{width:100%;position:absolute;color:#fff;font-size:2.4em;text-align:center;}
+  /*.section-wrap .section .title{width:100%;position:absolute;color:#fff;font-size:2.4em;text-align:center;}*/
 
-  .section-wrap .section .title p{ padding:0 4%;opacity:0}
+  /*.section-wrap .section .title p{ padding:0 4%;opacity:0}*/
 
-  .section-wrap .section .title.active .tit{ opacity:1;transform:translateY(-25px);-webkit-transform:translateY(-25px);transition:all 2s cubic-bezier(0.86,0,0.8,1);-webkit-transition:all 2s cubic-bezier(0.86,0,0.8,1);}
+  /*.section-wrap .section .title.active .tit{ opacity:1;transform:translateY(-25px);-webkit-transform:translateY(-25px);transition:all 2s cubic-bezier(0.86,0,0.8,1);-webkit-transition:all 2s cubic-bezier(0.86,0,0.8,1);}*/
 
-  /*.section-wrap .section-1{ background-color:#337ab7}*/
-  .section-wrap .section-2{ background-color:#5cb85c}
-  .section-wrap .section-3{ background-color:#5bc0de}
-  .section-wrap .section-4{ background-color:#f0ad4e}
-  .section-wrap .section-5{ background-color:#efefef}
+  /*!*.section-wrap .section-1{ background-color:#337ab7}*!*/
+  /*.section-wrap .section-2{ background-color:#5cb85c}*/
+  /*.section-wrap .section-3{ background-color:#5bc0de}*/
+  /*.section-wrap .section-4{ background-color:#f0ad4e}*/
+  /*.section-wrap .section-5{ background-color:#efefef}*/
 
-  .put-section-0{ transform:translateY(0);-webkit-transform:translateY(0);}
-  .put-section-1{ transform:translateY(-100%);-webkit-transform:translateY(-100%);}
-  .put-section-2{ transform:translateY(-200%);-webkit-transform:translateY(-200%);}
-  .put-section-3{ transform:translateY(-300%);-webkit-transform:translateY(-300%);}
-  .put-section-4{ transform:translateY(-400%);-webkit-transform:translateY(-400%);}
+  /*.put-section-0{ transform:translateY(0);-webkit-transform:translateY(0);}*/
+  /*.put-section-1{ transform:translateY(-100%);-webkit-transform:translateY(-100%);}*/
+  /*.put-section-2{ transform:translateY(-200%);-webkit-transform:translateY(-200%);}*/
+  /*.put-section-3{ transform:translateY(-300%);-webkit-transform:translateY(-300%);}*/
+  /*.put-section-4{ transform:translateY(-400%);-webkit-transform:translateY(-400%);}*/
 
-  .section-btn{ width:14px;position:fixed;right:4%;top:50%;}
-  .section-btn li{ width:14px;height:14px;cursor:pointer;text-indent:-9999px;border-radius:50%;-webkit-border-radius:50%;margin-bottom:12px; background:#BD362F;text-align:center; color:#fff; onsor:pointer;}
-  .section-btn li.on{ background:#fff}
+  /*.section-btn{ width:14px;position:fixed;right:4%;top:50%;}*/
+  /*.section-btn li{ width:14px;height:14px;cursor:pointer;text-indent:-9999px;border-radius:50%;-webkit-border-radius:50%;margin-bottom:12px; background:#BD362F;text-align:center; color:#fff; onsor:pointer;}*/
+  /*.section-btn li.on{ background:#fff}*/
 
-  .arrow{ opacity:1;animation:arrow 3s cubic-bezier(0.5,0,0.1,1) infinite;-webkit-animation:arrow 3s cubic-bezier(0.5,0,0.1,1) infinite;transform:rotate(-90deg);-webkit-transform:rotate(-90deg); position:absolute;bottom:10px;left:50%;margin-left:-30px;width:60px;height:60px;border-radius:100%;-webkit-border-radius:100%;line-height:60px;text-align:center;font-size:20px;color:#fff;border:1px solid #fff;cursor:pointer;overflow:hidden;}
-  .arrow:hover{ animation-play-state:paused;-webkit-animation-play-state:paused;}
+  /*.arrow{ opacity:1;animation:arrow 3s cubic-bezier(0.5,0,0.1,1) infinite;-webkit-animation:arrow 3s cubic-bezier(0.5,0,0.1,1) infinite;transform:rotate(-90deg);-webkit-transform:rotate(-90deg); position:absolute;bottom:10px;left:50%;margin-left:-30px;width:60px;height:60px;border-radius:100%;-webkit-border-radius:100%;line-height:60px;text-align:center;font-size:20px;color:#fff;border:1px solid #fff;cursor:pointer;overflow:hidden;}*/
+  /*.arrow:hover{ animation-play-state:paused;-webkit-animation-play-state:paused;}*/
 
-  @keyframes arrow{ %0,%100{bottom:10px; opacity:1;} 50%{bottom:50px; opacity:.5} }
-  @-webkit-keyframes arrow{ %0,%100{bottom:10px; opacity:1;} 50%{bottom:50px; opacity:.5} }
+  /*@keyframes arrow{ %0,%100{bottom:10px; opacity:1;} 50%{bottom:50px; opacity:.5} }*/
+  /*@-webkit-keyframes arrow{ %0,%100{bottom:10px; opacity:1;} 50%{bottom:50px; opacity:.5} }*/
 </style>

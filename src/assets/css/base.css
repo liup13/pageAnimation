@@ -1,12 +1,20 @@
-html,body{ width: 100%; height: 100%; margin: 0; overflow:hidden; }
+html,body{ width: 100%; height: 100%; }
 body{color:#222;-webkit-text-size-adjust:none;}
 body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl, dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td,iframe{margin:0; padding:0;}
 h1,h2,h3,h4,h5,h6{font-size:100%;}
-body,button,input,select,textarea {font-family:Tahoma,Arial,Roboto,”Droid Sans”,”Helvetica Neue”,”Droid Sans Fallback”,”Heiti SC”,sans-self;font-size:62.5%; line-height:1.5;}
+body{font-family:Tahoma,Arial,Roboto,”Droid Sans”,”Helvetica Neue”,”Droid Sans Fallback”,”Heiti SC”,sans-self;font-size:62.5%;}
 ol,ul{list-style:none;}
 
-.box { width: 100%; height: 100%;overflow: hidden; }
+.p-relative{ position: relative }
+.p-absolute{ position: absolute }
+/*浮动*/
+.fn-left { float: left}
+.fn-right { float: right}
+.fn-clear:after { visibility: hidden; display: block; font-size: 0; content:" "; clear: both; height: 0; }
+
+.fontSE60 { font-size: 60px; }
+.box { }
 
 
-.section-1 img{ width: 100%; }
-.section-1 .in-1{ position: absolute; top:0px; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,.6); }
+/*.section-1 img{ width: 100%; }*/
+/*.section-1 .in-1{ position: absolute; top:0px; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,.6); }*/
