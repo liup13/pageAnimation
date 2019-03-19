@@ -4,10 +4,10 @@
     <h1>ABOUT ME</h1>
     <div class="flex">
       <div class="basic">
-        <div><i class="iconfont">&#xe65e;</i>：刘萍</div>
-        <div>电话：18375943315</div>
-        <div>邮箱：liuping_love@yeah.net</div>
-        <div>求职意向：WEB前端工程师</div>
+        <div><i class="iconfont fontSE60">&#xe602;</i>刘萍</div>
+        <div><i class="iconfont">&#xe600;</i>18375943315</div>
+        <div><i class="iconfont">&#xe601;</i>liuping_love@yeah.net</div>
+        <div><i class="iconfont">&#xe6b3;</i>WEB前端工程师</div>
         <div id="message">{{message}}</div>
       </div>
       <div class=""><img src="../assets/images/photo.jpg"/></div>
@@ -46,7 +46,8 @@
 
 <style scoped>
   #note{ padding: 50px; }
-  .basic { text-align:left; flex: 1 }
+  .iconfont { color: #c03b44; margin-right: 20px; }
+  .basic {font-size: 30px; text-align:left; flex: 1 }
   .basic div{ padding: 10px 0; }
   /*#note { background: #ccc;position: absolute; top:0px; bottom: 0px; left: 0px; right: 0px; }*/
 </style>

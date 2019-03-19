@@ -5,8 +5,9 @@
     <div>
       <div class="count-agileits">
         <div class="container">
-          <div v-for="msg in msgs">
-            {{ msg.text }}
+          <div v-for="msg in msgs" :style="{width: msg.width}"> <!--:style="{backgroundColor: msg.text === 'jQuery' ? 'red' : 'white'}"-->
+            <div ></div>
+            <div>{{ msg.text }}</div>
           </div>
         </div>
       </div>
@@ -20,7 +21,7 @@
         data(){
           return{
             msgs:[
-              {text:"jQuery"},{text:"node.js"},{text:"echarts"},{text:"websocket"}
+              {text:"jQuery",width:300},{text:"node.js",width:300},{text:"echarts",width:300},{text:"websocket",width:300}
             ]
           }
         }

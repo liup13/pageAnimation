@@ -2,9 +2,13 @@
     <div class="box">
       <div class="section-1 p-relative">
         <div><img src="../assets/images/bj.jpg" style="width: 100%;height: 100%;margin-top: -15%;"/></div>
-        <div class="p-absolute note" style="top:0; text-align: center; left: 0; right: 0;bottom: 0;background: rgba(0, 0, 0, 0.5); padding-top: 8%;">
-          <div class="ch-name">简历</div>
-          <div class="en-name">RESUME</div>
+        <div class="p-absolute note" style="top:0; text-align: center; left: 0; right: 0;bottom: 0;background: rgba(0, 0, 0, 0.5);">
+          <section id="ci-particles">
+            <canvas id="canvas"></canvas>
+            <h1 id="headline" style="display: none">RESUME</h1>
+          </section>
+          <!--<div class="ch-name">简历</div>-->
+          <div class="en-name">个人简历</div>
           <div class="navs">
             <span class="nav" v-on:click="bottomClick('section-2')"><a href="#">个人</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="nav" v-on:click="bottomClick('section-3')"><a href="#">技能特长</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -103,6 +107,8 @@
         beforeMount:function(){},
         mounted:function(){ //已完成模板渲染或el对应HTML渲染后
           this.init();
+
+          this.common.fontAnimation();
           // this.common.typing("text",this.message);
           // this.scroll();
 
@@ -124,7 +130,7 @@
   .section-1 .navs.float .nav{ border: none; border-radius: 50%;height: 50px;line-height: 50px; color: #fff; animation: none;}
   .section-1 .navs.float .nav:hover{ font-size: 24px; }
 
-  .en-name{ color: #fff; font-family: monospace; font-weight: bold; font-size: 60pt; margin-bottom: 30px;}
+  .en-name{ color: #fff; font-family: monospace; font-weight: bold; font-size: 40pt;margin-top: -100px; margin-bottom: 80px;}
 
   footer{ background: #222222; height: 100px; width: 100%; }
 
