@@ -11,7 +11,7 @@ export default {
         divTyping.innerHTML = str.slice(0, j++) + '_'
         timer = setTimeout(function () {
           typing();
-        }, 200)
+        }, 100)
       }
       else {
         divTyping.innerHTML = str//结束打字,移除 _ 光标
@@ -20,7 +20,7 @@ export default {
     }
     typing();
   },
-
+  clientHeight:document.documentElement.clientHeight,
   getLoading: function () {
     console.log('加载中...');
   }

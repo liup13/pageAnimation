@@ -1,6 +1,6 @@
 <template>
   <div id="week">
-    <p id="weekBox">工作</p>
+    <!--<p id="weekBox">工作</p>-->
     <section id="cd-timeline" class="cd-container">
       <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-picture">
@@ -104,7 +104,9 @@
           }
         });
         //on scolling, show/animate timeline blocks when enter the viewport
-        $(window).on('scroll', function(){
+        $("#app").on('scroll', function(){
+          if($(this).scrollTop()>500){ $(".navs").addClass("float") }
+          else{ $(".navs").removeClass("float") }
           $timeline_block.each(function(){
             if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
               $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');

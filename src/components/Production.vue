@@ -1,5 +1,6 @@
 <template>
   <div class="production-box">
+    <h1>作品集</h1>
     <ul class="slides">
       <li class="slide-container">
         <div class="slide">
@@ -38,7 +39,7 @@
 </script>
 
 <style scoped>
-  .production-box { margin: 50px; }
+  .production-box { padding: 50px; }
   .production-box .slide { margin-bottom: 50px; box-shadow: 2px 4px 11px 0px #9a9696; }
   /*.hide{ animation:hide 3s cubic-bezier(0.5,0,0.1,1) forwards;-webkit-animation:hide 3s cubic-bezier(0.5,0,0.1,1) forwards;animation-fill-mode: forwards; }*/
   /*.show{ opacity:1;animation:show 3s cubic-bezier(0.5,0,0.1,1) forwards;-webkit-animation:show 3s cubic-bezier(0.5,0,0.1,1) forwards;}*/

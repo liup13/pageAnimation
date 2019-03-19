@@ -5,16 +5,24 @@ h1,h2,h3,h4,h5,h6{font-size:100%;}
 body{font-family:Tahoma,Arial,Roboto,”Droid Sans”,”Helvetica Neue”,”Droid Sans Fallback”,”Heiti SC”,sans-self;font-size:62.5%;}
 ol,ul{list-style:none;}
 
+h1{ font-size: 40px; }
+
 .p-relative{ position: relative }
 .p-absolute{ position: absolute }
 /*浮动*/
 .fn-left { float: left}
 .fn-right { float: right}
 .fn-clear:after { visibility: hidden; display: block; font-size: 0; content:" "; clear: both; height: 0; }
+.flex { display: flex; }
 
 .fontSE60 { font-size: 60px; }
-.box { }
 
 
-/*.section-1 img{ width: 100%; }*/
-/*.section-1 .in-1{ position: absolute; top:0px; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,.6); }*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('../images/iconfont/iconfont.eot');
+  src: url('../images/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../images/iconfont/iconfont.woff') format('woff'),
+  url('../images/iconfont/iconfont.ttf') format('truetype'),
+  url('../images/iconfont/iconfont.svg#iconfont') format('svg');
+}
