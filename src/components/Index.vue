@@ -1,21 +1,20 @@
 <template>
     <div class="box">
       <div class="section-1 p-relative">
-        <div><img src="../assets/images/bj.jpg" style="width: 100%;height: 100%;margin-top: -15%;"/></div>
-        <div class="p-absolute note" style="top:0; text-align: center; left: 0; right: 0;bottom: 0;background: rgba(0, 0, 0, 0.5);">
-          <section id="ci-particles">
-            <canvas id="canvas"></canvas>
-            <h1 id="headline" style="display: none">RESUME</h1>
-          </section>
-          <!--<div class="ch-name">简历</div>-->
-          <div class="en-name">个人简历</div>
-          <div class="navs">
-            <span class="nav" v-on:click="bottomClick('section-2')"><a href="#">个人</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="nav" v-on:click="bottomClick('section-3')"><a href="#">技能特长</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="nav" v-on:click="bottomClick('section-4')"><a href="#">作品集</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="nav" v-on:click="bottomClick('section-5')"><a href="#">工作</a></span>
+        <div class="p-absolute note">
+          <div>
+            <section id="ci-particles">
+              <canvas id="canvas"></canvas>
+              <h1 id="headline" style="display: none">RESUME</h1>
+            </section>
+            <div class="en-name" id="en-name">个人简历</div>
+            <div class="navs">
+              <span class="nav" v-on:click="bottomClick('section-2')"><a href="#">关于我</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span class="nav" v-on:click="bottomClick('section-3')"><a href="#">技能特长</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span class="nav" v-on:click="bottomClick('section-4')"><a href="#">作品集</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span class="nav" v-on:click="bottomClick('section-5')"><a href="#">工作</a></span>
+            </div>
           </div>
-
         </div>
       </div>
       <div class="section section-2">
@@ -93,12 +92,28 @@
               // $("#app").(top);
               // this.common.getLoading();
             },
-            // scroll:function(){
-            //   $("#app").scroll(function() {
-            //     console.log($(this).scrollTop());
-            //     console.log(this.clientHeight);
-            //   });
-            // }
+            scroll:function(){
+              var $timeline_block = $('.cd-timeline-block');
+
+              $("#app").on('scroll', function(){
+                if($(this).scrollTop()>500){ $(".navs").addClass("float") }
+                else{ $(".navs").removeClass("float") }
+
+                $timeline_block.each(function(){
+                  if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
+                    $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+                  }
+                });
+
+                $(".count-agileits .item").each(function(){
+                  if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.75 && $(this).find('.item-z').hasClass('is-hidden') ) {
+                    var width = $(this).find('.item-z').attr("param")
+                    $(this).find('.item-z').animate({"width":width},1000).removeClass("is-hidden");
+                  }
+                });
+
+              });
+            }
         },
         beforeCreate:function(){
 
@@ -110,8 +125,8 @@
 
           this.common.fontAnimation();
           // this.common.typing("text",this.message);
-          // this.scroll();
-
+          this.scroll();
+          this.common.typing("en-name","个人简历");
           // $("app").scroll(function(event){
           //   console.log("====");
           // });
@@ -123,13 +138,21 @@
 
 <style scoped>
   .section-1 { height: 600px; overflow: hidden }
-  .section-1 .nav{ display: inline-block; font-size: 20px; width: 100px; height: 100px; line-height: 100px; border: 1px solid #bdb6b6; border-radius: 50%;vertical-align: middle;animation: bs linear 2s 0s infinite; }
+  .section-1 .nav{ cursor: pointer; display: inline-block; font-size: 20px; width: 100px; height: 100px; line-height: 100px; border: 1px solid #bdb6b6; border-radius: 50%;vertical-align: middle;animation: bs linear 2s 2.5s infinite; }
   .section-1 .nav:hover{ font-size: 24px;transition: all .4s ease-in-out; }
   .section-1 .nav a{ color: #fff; }
   .section-1 .navs.float{ position: fixed; top:0px; left: 0px; right: 0px;background: rgba(0, 0, 0,0.6);z-index: 10; }
   .section-1 .navs.float .nav{ border: none; border-radius: 50%;height: 50px;line-height: 50px; color: #fff; animation: none;}
   .section-1 .navs.float .nav:hover{ font-size: 24px; }
 
+  .section-5{ background-color: #e9f0f5; }
+
+  .note{
+    background: url('../assets/images/stats.jpg') no-repeat 0px 0px;
+    background-size: cover;
+    background-attachment: fixed;
+    top:0; text-align: center; left: 0; right: 0;bottom: 0;
+  }
   .en-name{ color: #fff; font-family: monospace; font-weight: bold; font-size: 40pt;margin-top: -100px; margin-bottom: 80px;}
 
   footer{ background: #222222; height: 100px; width: 100%; }

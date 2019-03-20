@@ -7,6 +7,15 @@ ol,ul{list-style:none;}
 
 h1{ font-size: 40px; margin-bottom: 50px}
 
+@media screen and (max-width: 1000px) {
+  .section-1{ height: 300px!important; }
+  .en-name{ font-size: 20px!important; }
+  .item { width: 85%!important; }
+  #note { padding: 50px 15px!important; }
+  .basic{ font-size:15px!important; }
+  .section-1 .navs.float .nav{ width: 60px!important; font-size: 15px!important; }
+}
+
 .p-relative{ position: relative }
 .p-absolute{ position: absolute }
 /*浮动*/
@@ -16,6 +25,7 @@ h1{ font-size: 40px; margin-bottom: 50px}
 .flex { display: flex; }
 
 .fontSE60 { font-size: 60px; }
+.color01{ color: #FFF; }
 
 
 @font-face {

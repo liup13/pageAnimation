@@ -1,6 +1,6 @@
 <template>
   <div class="production-box">
-    <h1>作品集</h1>
+    <h1>PORTFOLIO</h1>
     <ul class="slides">
       <li class="slide-container">
         <div class="slide">
