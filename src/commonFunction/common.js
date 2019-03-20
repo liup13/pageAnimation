@@ -109,8 +109,8 @@ export default {
 
     function initScene() {
 
-      ww = canvas.width = window.innerWidth;
-      wh = canvas.height = 380;
+      ww = canvas.width = window.innerWidth ;
+      wh = canvas.height = window.innerWidth <1000 ? 150 : 380;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 

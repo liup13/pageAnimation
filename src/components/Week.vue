@@ -2,81 +2,17 @@
   <div id="week">
     <h1>EXPERIENCE</h1>
     <section id="cd-timeline" class="cd-container">
-        <div class="cd-timeline-block">
-          <div class="cd-timeline-img cd-picture">
-            <!--<img src="images/cd-icon-picture.svg" alt="Picture">-->
-          </div>
-
+        <div v-for="item in weeks" class="cd-timeline-block">
+          <div class="cd-timeline-img cd-picture"> </div>
           <div class="cd-timeline-content">
             <h2>{{item.name}}</h2>
-            <p>jQuery 团队在官博中再次提醒用户，jQuery 2.0 不再支持IE 6/7/8 了，但是 jQuery 1.9 会继续支持。因为旧版 IE 浏览器在整个互联网中还有很大部分市场，所以他们非常期望大部分网站能继续使用 jQuery 1.x 一段时间。jQuery 团队也将同时支持 jQuery 1.x 和 2.x 。1.9 和 2.0 版的 API 是相同的，所以不必因为你们网站还在用 jQuery 1.9，就感觉好像错过了什么，或者是落后了。</p>
-            <span class="cd-date">2018-11</span>
-          </div> <!-- cd-timeline-content -->
+            <div>
+              <div>{{item.text}}</div>
+              <div>{{item.text2}}</div>
+            </div>
+            <span class="cd-date">{{item.time}}</span>
+          </div>
         </div>
-
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-picture">
-          <!--<img src="images/cd-icon-movie.svg" alt="Movie">-->
-        </div>
-
-        <div class="cd-timeline-content">
-          <h2>html5时间表 2</h2>
-          <p>jQuery 团队在官博中再次提醒用户，jQuery 2.0 不再支持IE 6/7/8 了，但是 jQuery 1.9 会继续支持。因为旧版 IE 浏览器在整个互联网中还有很大部分市场，所以他们非常期望大部分网站能继续使用 jQuery 1.x 一段时间。jQuery 团队也将同时支持 jQuery 1.x 和 2.x 。1.9 和 2.0 版的 API 是相同的，所以不必因为你们网站还在用 jQuery 1.9，就感觉好像错过了什么，或者是落后了。</p>
-          <span class="cd-date">Jan 18</span>
-        </div> <!-- cd-timeline-content -->
-      </div> <!-- cd-timeline-block -->
-
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-picture">
-          <!--<img src="images/cd-icon-picture.svg" alt="Picture">-->
-        </div> <!-- cd-timeline-img -->
-
-        <div class="cd-timeline-content">
-          <h2>html5时间表 3</h2>
-          <p>jQuery 团队在官博中再次提醒用户，jQuery 2.0 不再支持IE 6/7/8 了，但是 jQuery 1.9 会继续支持。因为旧版 IE 浏览器在整个互联网中还有很大部分市场，所以他们非常期望大部分网站能继续使用 jQuery 1.x 一段时间。jQuery 团队也将同时支持 jQuery 1.x 和 2.x 。1.9 和 2.0 版的 API 是相同的，所以不必因为你们网站还在用 jQuery 1.9，就感觉好像错过了什么，或者是落后了。</p>
-          <a href="#" class="cd-read-more">阅读更多</a>
-          <span class="cd-date">Jan 24</span>
-        </div> <!-- cd-timeline-content -->
-      </div> <!-- cd-timeline-block -->
-
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-location">
-          <img src="images/cd-icon-location.svg" alt="Location">
-        </div> <!-- cd-timeline-img -->
-
-        <div class="cd-timeline-content">
-          <h2>html5时间表 4</h2>
-          <p>jQuery 团队在官博中再次提醒用户，jQuery 2.0 不再支持IE 6/7/8 了，但是 jQuery 1.9 会继续支持。因为旧版 IE 浏览器在整个互联网中还有很大部分市场，所以他们非常期望大部分网站能继续使用 jQuery 1.x 一段时间。jQuery 团队也将同时支持 jQuery 1.x 和 2.x 。1.9 和 2.0 版的 API 是相同的，所以不必因为你们网站还在用 jQuery 1.9，就感觉好像错过了什么，或者是落后了。</p>
-          <a href="#" class="cd-read-more">阅读更多</a>
-          <span class="cd-date">Feb 14</span>
-        </div> <!-- cd-timeline-content -->
-      </div> <!-- cd-timeline-block -->
-
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-location">
-          <img src="images/cd-icon-location.svg" alt="Location">
-        </div> <!-- cd-timeline-img -->
-
-        <div class="cd-timeline-content">
-          <h2>html5时间表 5</h2>
-          <p>jQuery 团队在官博中再次提醒用户，jQuery 2.0 不再支持IE 6/7/8 了，但是 jQuery 1.9 会继续支持。因为旧版 IE 浏览器在整个互联网中还有很大部分市场，所以他们非常期望大部分网站能继续使用 jQuery 1.x 一段时间。jQuery 团队也将同时支持 jQuery 1.x 和 2.x 。1.9 和 2.0 版的 API 是相同的，所以不必因为你们网站还在用 jQuery 1.9，就感觉好像错过了什么，或者是落后了。</p>
-          <a href="#" class="cd-read-more">阅读更多</a>
-          <span class="cd-date">Feb 18</span>
-        </div> <!-- cd-timeline-content -->
-      </div> <!-- cd-timeline-block -->
-
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-movie">
-          <img src="images/cd-icon-movie.svg" alt="Movie">
-        </div> <!-- cd-timeline-img -->
-
-        <div class="cd-timeline-content">
-          <h2>html5时间表 6</h2>
-          <p>jQuery 团队在官博中再次提醒用户，jQuery 2.0 不再支持IE 6/7/8 了，但是 jQuery 1.9 会继续支持。因为旧版 IE 浏览器在整个互联网中还有很大部分市场，所以他们非常期望大部分网站能继续使用 jQuery 1.x 一段时间。jQuery 团队也将同时支持 jQuery 1.x 和 2.x 。1.9 和 2.0 版的 API 是相同的，所以不必因为你们网站还在用 jQuery 1.9，就感觉好像错过了什么，或者是落后了。</p>
-          <a href="#" class="cd-read-more">阅读更多</a>
-          <span class="cd-date">Feb 26</span>
-        </div> <!-- cd-timeline-content -->
-      </div> <!-- cd-timeline-block -->
     </section> <!-- cd-timeline -->
   </div>
 </template>
@@ -89,6 +25,10 @@
         data(){
             return {
               weeks:[
+                {name:"违法犯罪人员信息系统",time:"2018-09 至 今",text:"项目主要负责 看拘戒、监管总、支队业务管理系统  （功能模块 200个以上）主要使用jQuery 、websocket 、ajax、javaScript 、css3......",text2:"在该项目承担前端架构、公共组件的研发、主要功能的研发在该项目中属于前端组负责人（总人数：4人）" },
+                {name:"感知监管",time:"2017-11 至 2018-02",text:"项目主要负责 看拘戒、监管总、支队业务管理系统  （功能模块 200个以上）主要使用jQuery 、websocket 、ajax、javaScript 、css3......",text2:"在该项目承担前端架构、公共组件的研发、主要功能的研发在该项目中属于前端组负责人（总人数：4人）" },
+                {name:"广西实战平台",time:"2017-05 至 2017-08",text:"项目主要负责 看拘戒、监管总、支队业务管理系统  （功能模块 200个以上）主要使用jQuery 、websocket 、ajax、javaScript 、css3......",text2:"在该项目承担前端架构、公共组件的研发、主要功能的研发在该项目中属于前端组负责人（总人数：4人）" },
+                {name:"aa",text:"sdsa"}
               ]
             }
         },

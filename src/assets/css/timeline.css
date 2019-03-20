@@ -304,6 +304,7 @@ header h1 {
     margin-left: 0;
     padding: 1.6em;
     width: 45%;
+    text-align: left;
   }
   .cd-timeline-content::before {
     top: 24px;
@@ -316,7 +317,7 @@ header h1 {
   /*}*/
   .cd-timeline-content .cd-date {
     position: absolute;
-    width: 130px;
+    width: 300px;
     left: 118%;
     top: -26px;
     /*font-size: 16px;*/

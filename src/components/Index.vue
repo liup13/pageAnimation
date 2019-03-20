@@ -34,7 +34,7 @@
         <!--<div class="arrow" v-on:click="bottomClick">&laquo;</div>-->
 
       <footer>
-
+          <a href="#">下载word简历</a>
       </footer>
     </div>
 </template>
@@ -112,6 +112,11 @@
                   }
                 });
 
+
+                if( $(".basic").offset().top <= $(window).scrollTop()+$(window).height()*0.75 && $(".basic").hasClass('is-hidden') ) {
+                  // var width = $(this).find('.item-z').attr("param")
+                  $(".basic").animate({"opacity":1},1000).removeClass("is-hidden");
+                }
               });
             }
         },
@@ -155,7 +160,7 @@
   }
   .en-name{ color: #fff; font-family: monospace; font-weight: bold; font-size: 40pt;margin-top: -100px; margin-bottom: 80px;}
 
-  footer{ background: #222222; height: 100px; width: 100%; }
+  footer{ background: #222222; height: 100px; line-height: 100px; width: 100%; }
 
 
   @-webkit-keyframes bs {

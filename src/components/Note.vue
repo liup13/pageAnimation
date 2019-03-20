@@ -9,7 +9,7 @@
         <div><i class="iconfont">&#xe601;</i>{{email}}</div>
         <div id="message">{{message}}</div>
       </div>
-      <div class=""><img src="../assets/images/photo.jpg"/></div>
+      <div class="photo"><img src="../assets/images/photo.jpg"/></div>
     </div>
 
   </div>
@@ -46,5 +46,6 @@
   .iconfont { color: #c03b44; margin-right: 20px; }
   .basic {font-size: 30px; text-align:left; flex: 1 }
   .basic div{ padding: 10px 0; }
+  .photo{ width: 500px; }
   /*#note { background: #ccc;position: absolute; top:0px; bottom: 0px; left: 0px; right: 0px; }*/
 </style>
