@@ -24,10 +24,12 @@
         data(){
           return{
             msgs:[
-              {name:"jQuery",width:'80%',text:"熟练"},
-              {name:"node.js",width:'40%',text:"熟练"},
-              {name:"echarts",width:'80%',text:"熟练"},
-              {name:"websocket",width:'80%',text:"熟练"}
+              {name:"jQuery",width:'90%',text:"精通"},
+              {name:"echarts",width:'90%',text:"精通"},
+              {name:"node.js",width:'40%',text:"了解"},
+              {name:"websocket",width:'60%',text:"熟练"},
+              {name:"vue",width:'50%',text:"了解"},
+              {name:"react",width:'50%',text:"了解"},
             ]
           }
         }

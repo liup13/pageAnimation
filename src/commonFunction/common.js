@@ -28,7 +28,7 @@ export default {
     var canvas = document.querySelector("#canvas"),
       ctx = canvas.getContext("2d"),
       link = document.createElement('link'),
-    particles = [],
+      particles = [],
       amount = 0,
       mouse = { x: -9999, y: -9999 },
       radius = 1,
