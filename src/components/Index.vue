@@ -34,7 +34,9 @@
         <!--<div class="arrow" v-on:click="bottomClick">&laquo;</div>-->
 
       <footer>
-          <a href="#">下载word简历</a>
+          <!--<a href="#">下载word简历</a>-->
+        <a href="https://github.com/liup13" target="_blank">gitHub</a>&nbsp;&nbsp;&nbsp;
+        <a href="https://blog.csdn.net/jdj_1" target="_blank">CSDN</a>
       </footer>
     </div>
 </template>

@@ -25,11 +25,20 @@
           return{
             msgs:[
               {name:"jQuery",width:'90%',text:"精通"},
-              {name:"echarts",width:'90%',text:"精通"},
+              {name:"json",width:'90%',text:"精通"},
+              {name:"ajax",width:'90%',text:"精通"},
+              {name:"echarts",width:'80%',text:"熟悉"},
+              {name:"websocket",width:'80%',text:"熟练"},
+              {name:"java",width:'80%',text:"熟练"},
+              {name:"Photoshop",width:'60%',text:"熟练"},
+              {name:"Axure",width:'60%',text:"熟练"},
+              {name:"MySql",width:'60%',text:"熟练"},
+              {name:"bootstrap",width:'50%',text:"了解"},
               {name:"node.js",width:'40%',text:"了解"},
-              {name:"websocket",width:'60%',text:"熟练"},
               {name:"vue",width:'50%',text:"了解"},
-              {name:"react",width:'50%',text:"了解"},
+              {name:"react",width:'40%',text:"了解"},
+              {name:"oracle ",width:'50%',text:"了解"},
+
             ]
           }
         }
